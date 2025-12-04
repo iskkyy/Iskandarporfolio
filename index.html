@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saary Iskandar - Digital Designer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="SK Logo" class="header-logo-image">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#projects">PROJECTS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about" class="section-dark">
+        <div class="container about-container">
+            <div class="profile-info">
+                <h1>Saary Iskandar</h1>
+                <h2>Digital Designer</h2>
+                <div class="social-links">
+                    <span>[in]</span>
+                    <span>[fb]</span>
+                    <span>[tw]</span>
+                    <span>[ig]</span>
+                </div>
+            </div>
+            <div class="profile-image-wrapper">
+                <img src="img/isprofile.png" alt="Saary Iskandar Profile" class="profile-image">
+            </div>
+        </div>
+        
+        <div class="container about-me-text">
+            <h3 class="section-title">About Me</h3>
+            <div class="text-block">
+                
+                <span class="hi-text">Hi</span>
+                <span class="name-text">My Name <br> Iskandar</span>
+                <p>
+                    I am a **Web Designer** with a primary focus on crafting **clean, efficient, and visually quiet digital experiences**. My work is rooted in the belief that effective design is often the simplest design. I leverage minimalist principles to ensure the user interface is intuitive, the information is accessible, and the overall aesthetic is modern and sophisticated. 
+                    
+                    Having successfully accomplished many projects, my expertise spans various platforms. While I am deeply passionate about **minimalist theme design**, I am always ready to **step outside my comfort zone** to master new styles and visual identities required to precisely fulfill the unique needs of my client.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section-dark">
+        <div class="container projects-header">
+            <h3 class="section-title">Projects</h3>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-content">
+                <h4 class="project-title">AR Card</h4>
+                <p>This project explores the development of an Augmented Reality (AR) business card, transitioning a simplistic name card into an interactive digital experience. Designed to trigger a series of experiences like floating UI elements, interactive 3D models and video playback, and outcome is a dynamic, self-serving card that enhances the traditional exchange of contact information, serving as a memorable and unique brand asset for the digital age.</p>
+            </div>
+            <div class="project-image-wrapper">
+                <img src="img/ArTiger.png" alt="AR Card Mockup" class="project-image">
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-content">
+                <h4 class="project-title">Avatar Character</h4>
+                <p>This project required the creation of unique avatar design, where I seek to explore the elements of familiarity and pop culture. The semi-cartoonist aspect provides a detailed model and expressive rig, allowing for a realistic range of motion and personality. The visual design is vibrant and inviting, reflecting key themes of the project.</p>
+            </div>
+            <div class="project-images-wrapper avatar-images">
+                <img src="img/dog.png" alt="dog">
+                <img src="img/cat.png" alt="cat">
+                <img src="img/parrot.png" alt="parrot">
+            </div>
+        </div>
+
+        <div class="project-card vr-game">
+        <div class="project-images-wrapper vr-image">
+            <div class="carousel-container">
+                <img src="img/S1.png" alt="VR Game Screenshot 1" class="carousel-image active">
+                <img src="img/S2.png" alt="VR Game Screenshot 2" class="carousel-image">
+                <img src="img/S3.png" alt="VR Game Screenshot 3" class="carousel-image">
+            </div>
+            <div class="carousel-nav">
+                <button class="prev-button">❮</button>
+                <button class="next-button">❯</button>
+            </div>
+        </div>
+        <div class="project-content">
+            <h4 class="project-title">VR Game</h4>
+            <p>In this project we are task to create a VR escape room. The 'Silent Scourge' offers a chilling and unique gaming experience. Its core appeal lies in its immersive storytelling, coupled with intuitive controls and spatial sound design. The game challenges players to solve complex puzzles and uncover the truth in a dimly lit, eerie environment. Players will descent into the quiet horror of the unknown.</p>
+        </div>
+    </div>
+    </section>
+
+    <section id="contact" class="section-dark contact-section">
+
+        <div class="contact-box">
+            <div class="contact-header">
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="contact-form">
+                <div class="contact-row email-row">
+                    <span class="label">[email]</span>
+                    <input type="email" value="saary_iskandar@hotmail.com" readonly>
+                </div>
+                <div class="contact-row">
+                    <span class="label">[contact]</span>
+                    <input type="text" value="+65 98765432" readonly>
+                </div>
+                <div class="contact-row instagram-row">
+                    <span class="label">[instagram]</span>
+                    <input type="text" value="@sa_isk" readonly>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="carousel.js"></script>
+</body>
+</html>

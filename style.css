@@ -1,0 +1,408 @@
+
+
+/* General Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-bg: #111;
+    --text-color: #f0f0f0;
+    --accent-color: #e63946; /* Reddish accent color */
+    --light-gray: #ccc;
+    --box-bg: #1a1a1a;
+    --font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-dark {
+    padding: 80px 0;
+}
+
+/* --- Header & Navigation --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(17, 17, 17, 0.95);
+}
+
+.logo {
+    /* Container for the logo image */
+    padding: 5px 10px; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-logo-image {
+    /* Style the image itself */
+    height: 1.5em; 
+    width: auto;
+    display: block;
+    /* Logo color change to white */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+/* --- About Section --- */
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.profile-info {
+    flex: 1;
+    max-width: 50%;
+    padding-top: 40px;
+}
+
+.profile-info h1 {
+    font-size: 3em;
+    margin-bottom: 5px;
+}
+
+.profile-info h2 {
+    font-size: 1.5em;
+    color: var(--light-gray);
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.social-links span {
+    display: inline-block;
+    border: 1px solid var(--light-gray);
+    padding: 5px 10px;
+    margin-right: 10px;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+.profile-image-wrapper {
+    flex: 1;
+    max-width: 40%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-me-text {
+    background-color: var(--box-bg);
+    padding: 40px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title {
+    font-size: 1.2em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: var(--light-gray);
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    align-self: flex-start;
+}
+
+.text-block {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.hi-text {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.name-text {
+    font-size: 3.5em;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-right: 40px;
+}
+
+.text-block p {
+    flex: 1;
+    max-width: 500px;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+
+/* --- Projects Section --- */
+#projects {
+    padding-top: 40px;
+}
+
+.projects-header {
+    margin-bottom: 40px;
+}
+
+.project-card {
+    display: flex;
+    align-items: center; 
+    padding: 40px 0;
+    border-bottom: 1px solid #333;
+    gap: 40px;
+}
+
+.project-card:last-child {
+    border-bottom: none;
+}
+
+.project-content {
+    flex: 2;
+}
+
+/* Image wrappers are containers to control the size */
+.project-image-wrapper, .project-images-wrapper {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    background-color: #333; 
+    position: relative; 
+    overflow: hidden; 
+}
+
+/* Generic styling for all images inside project cards */
+.project-image-wrapper img,
+.project-images-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    display: block;
+}
+
+.project-image-wrapper {
+    height: 250px;
+}
+
+.avatar-images {
+    height: 300px;
+    gap: 10px;
+}
+.avatar-images img {
+    width: calc(33.33% - 7px);
+    height: 100%;
+    object-fit: contain;
+    background-color: #000;
+}
+
+
+.vr-image {
+    height: 400px;
+    flex: 1.5;
+}
+
+.vr-game .project-content {
+    flex: 1;
+}
+
+.project-title {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+/* 🌟 CAROUSEL SPECIFIC STYLES 🌟 */
+.carousel-container {
+    display: flex;
+    width: 300%; 
+    height: 100%;
+    /* 🌟 NEW: Add transition for smooth sliding 🌟 */
+    transition: transform 0.5s ease-in-out;
+}
+
+/* 🌟 NEW: CSS classes for JavaScript to trigger sliding 🌟 */
+.carousel-container.translate-1 {
+    transform: translateX(-33.333%);
+}
+.carousel-container.translate-2 {
+    transform: translateX(-66.666%);
+}
+/* 🌟 END NEW SLIDE CLASSES 🌟 */
+
+.carousel-image {
+    width: 33.333%; 
+    height: 100%;
+    object-fit: cover;
+    display: block; /* Display all images now that we are using transform */
+}
+
+.carousel-container.translate-1 {
+    /* Moves the carousel left by 1/3 of the total container width */
+    transform: translateX(-33.333333%);
+}
+
+carousel-container.translate-2 {
+    /* Moves the carousel left by 2/3 of the total container width */
+    transform: translateX(-66.666666%); 
+}
+
+/* This rule is now mostly redundant but can be kept for consistency */
+.carousel-image.active {
+    display: block;
+}
+
+/* Styling for Navigation Buttons */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 10px;
+    pointer-events: none; 
+}
+
+.carousel-nav button {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    pointer-events: all; 
+    font-size: 1.5em;
+    transition: background 0.3s;
+}
+
+.carousel-nav button:hover {
+    background: var(--accent-color);
+}
+/* 🌟 END CAROUSEL STYLES 🌟 */
+
+
+/* --- Contact Section --- */
+.contact-section {
+    padding-top: 0;
+    display: flex;
+    justify-content: center;
+    /* IMPORTANT: Establish position context for absolute image */
+    position: relative;
+}
+
+/* 🖼️ CONTACT IMAGE STYLES (Positioned on the left side) */
+.contact-image {
+    position: absolute;
+    left: 0; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 600px; 
+    height: 600px; 
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    margin-right: 40px;
+}
+
+.contact-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0.5;
+}
+
+.contact-box {
+    width: 100%;
+    max-width: 450px;
+    background: rgba(30, 30, 30, 0.8);
+    border: 1px solid #555;
+    padding: 30px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.contact-header h2 {
+    font-size: 3em;
+    font-weight: 700;
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 10px;
+}
+
+.contact-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border: 1px solid #555;
+    background-color: var(--box-bg);
+}
+
+.contact-row .label {
+    background-color: #333;
+    padding: 10px;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    min-width: 100px;
+    text-align: right;
+    border-right: 1px solid #555;
+}
+
+.contact-row input {
+    flex: 1;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: 1em;
+    font-family: inherit;
+}
