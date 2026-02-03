@@ -1,37 +1,34 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const carouselContainer = document.querySelector('.vr-game .carousel-container');
-    const prevButton = document.querySelector('.vr-game .prev-button');
-    const nextButton = document.querySelector('.vr-game .next-button');
+    // 1. Target the specific carousel elements
+    const container = document.querySelector('.vr-game .carousel-container');
+    const prevBtn = document.querySelector('.vr-game .prev-button');
+    const nextBtn = document.querySelector('.vr-game .next-button');
     
-    let currentSlide = 0; // 0 = first image, 1 = second, 2 = third
-    const totalSlides = 3;
+    let currentSlide = 0;
+    const totalSlides = 3; // For your 3 images
 
     function updateCarousel() {
-        // Remove previous translate classes
-        carouselContainer.classList.remove('translate-1', 'translate-2');
-
-        // Apply the new translate class based on the currentSlide index
+        console.log("Current Slide:", currentSlide); // 🛠️ Check your browser console!
+        
+        // Reset translation classes
+        container.classList.remove('translate-1', 'translate-2');
+        
+        // Add class based on slide index
         if (currentSlide === 1) {
-            // Show second image
-            carouselContainer.classList.add('translate-1');
+            container.classList.add('translate-1');
         } else if (currentSlide === 2) {
-            // Show third image
-            carouselContainer.classList.add('translate-2');
+            container.classList.add('translate-2');
         }
     }
 
-    nextButton.addEventListener('click', () => {
-        // Move to the next slide, but loop back to 0 if we hit the end
+    // 2. Attach click events
+    nextBtn.addEventListener('click', function() {
         currentSlide = (currentSlide + 1) % totalSlides;
         updateCarousel();
     });
 
-    prevButton.addEventListener('click', () => {
-        // Move to the previous slide, but loop to the last slide if we hit the beginning
+    prevBtn.addEventListener('click', function() {
         currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
         updateCarousel();
     });
-
-    // Set the initial state
-    updateCarousel();
-});
+}); // 🌟 This closing bracket was likely missing in your code!

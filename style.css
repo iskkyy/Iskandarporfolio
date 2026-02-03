@@ -36,7 +36,7 @@ a:hover {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 60px;
 }
 
 .section-dark {
@@ -86,18 +86,16 @@ nav ul li a {
     font-size: 0.9em;
 }
 
-/* --- About Section --- */
 .about-container {
     display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    margin-bottom: 80px;
+    justify-content: center; /* Pulls both sides toward the middle */
+    gap: 100px; /* Controls exactly how much space is between them */
 }
 
 .profile-info {
     flex: 1;
-    max-width: 50%;
-    padding-top: 40px;
+    text-align: right; /* Aligns text towards the image */
+    padding-right: 50px;
 }
 
 .profile-info h1 {
@@ -123,12 +121,8 @@ nav ul li a {
 
 .profile-image-wrapper {
     flex: 1;
-    max-width: 40%;
-    position: relative;
-    overflow: hidden;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
 }
 
 .profile-image {
@@ -194,9 +188,9 @@ nav ul li a {
 .project-card {
     display: flex;
     align-items: center; 
-    padding: 40px 0;
+    padding: 60px 0;   /* 🌟 Added more vertical space between cards */
     border-bottom: 1px solid #333;
-    gap: 40px;
+    gap: 60px;         /* 🌟 Increased gap between text and image */
 }
 
 .project-card:last-child {
@@ -244,28 +238,58 @@ nav ul li a {
 }
 
 
-.vr-image {
-    height: 400px;
-    flex: 1.5;
+
+/* --- Static VR Game Grid --- */
+.vr-grid {
+    display: flex;
+    flex-direction: column; /* Stacks images vertically */
+    gap: 20px;              /* Consistent spacing between images */
+    flex: 1.5;              /* Balanced width against the text content */
 }
 
-.vr-game .project-content {
-    flex: 1;
+.vr-grid img {
+    width: 100%;
+    height: 300px;          /* Fixed height for a uniform look */
+    object-fit: cover;      /* 🌟 Ensures images fill the box perfectly without bars */
+    border-radius: 4px;
+    background-color: var(--box-bg);
+    display: block;
 }
 
+/* Optional: Side-by-Side Grid for larger screens */
+@media (min-width: 1024px) {
+    .vr-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two images per row */
+        gap: 15px;
+    }
+    
+    /* Make the first image span full width for a featured look */
+    .vr-grid img:first-child {
+        grid-column: span 2;
+        height: 400px;
+    }
+}
 .project-title {
     font-size: 2em;
     margin-bottom: 15px;
     color: var(--accent-color);
 }
 
-/* 🌟 CAROUSEL SPECIFIC STYLES 🌟 */
+/* The long strip holding 3 images */
 .carousel-container {
     display: flex;
-    width: 300%; 
+    width: 300%; /* 🌟 3 images = 300% */
     height: 100%;
-    /* 🌟 NEW: Add transition for smooth sliding 🌟 */
     transition: transform 0.5s ease-in-out;
+}
+
+
+.carousel-image {
+    width: 33.333333%;   /* Exactly 1/3 of the 300% width */
+    height: 100%;
+    object-fit: cover;   /* 🌟 THIS REMOVES THE BLACK BARS 🌟 */
+    flex-shrink: 0;
 }
 
 /* 🌟 NEW: CSS classes for JavaScript to trigger sliding 🌟 */
@@ -278,15 +302,15 @@ nav ul li a {
 /* 🌟 END NEW SLIDE CLASSES 🌟 */
 
 .carousel-image {
-    width: 33.333%; 
+    width: 50%;          /* Each image is now exactly 50% of the container */
     height: 100%;
-    object-fit: cover;
-    display: block; /* Display all images now that we are using transform */
+    object-fit: cover;   /* Ensures the VR scene fills the box perfectly */
+    flex-shrink: 0;
 }
 
+/* 🌟 SLIDE TRANSITION FOR 2 IMAGES 🌟 */
 .carousel-container.translate-1 {
-    /* Moves the carousel left by 1/3 of the total container width */
-    transform: translateX(-33.333333%);
+    transform: translateX(-50%); /* Move by exactly one image width */
 }
 
 carousel-container.translate-2 {
@@ -302,24 +326,29 @@ carousel-container.translate-2 {
 /* Styling for Navigation Buttons */
 .carousel-nav {
     position: absolute;
-    top: 50%;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
-    transform: translateY(-50%);
-    padding: 0 10px;
-    pointer-events: none; 
+    align-items: center;
+    pointer-events: none; /* Allows clicks to pass through to the buttons only */
+    z-index: 10;
 }
 
 .carousel-nav button {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     color: white;
     border: none;
-    padding: 10px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
-    z-index: 10;
-    pointer-events: all; 
+    pointer-events: auto; /* Re-enables clicking for the buttons */
     font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: background 0.3s;
 }
 
